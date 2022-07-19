@@ -21,8 +21,8 @@ class Solution1 {
 class Solution2 {
     public int[] twoSum(int[] nums, int target) {
         int ans[] = new int[2];
-
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        
         for (int a = 0; a<nums.length; a++){
             map.put(nums[a],a);
         }
