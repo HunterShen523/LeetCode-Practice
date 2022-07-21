@@ -14,6 +14,18 @@ class Solution {
         ListNode ans_head = ans;
         int carry = 0;
 
+        ans.val = l1.val + l2.val;
+        l1 = l1.next;
+        l2 = l2.next;
+        
+        if (ans.val > 9) {
+            ans.val -= 10;
+            carry = 1;
+        } else {
+            carry = 0;
+        }
+        
+        
         while (carry==1 || l1!=null || l2!=null ) {
             ans.next = new ListNode();
             ans = ans.next;
@@ -40,7 +52,7 @@ class Solution {
             }
 
         } 
-        return ans_head.next;
+        return ans_head;
 
     }
 }
