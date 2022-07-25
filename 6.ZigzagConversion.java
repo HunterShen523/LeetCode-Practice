@@ -1,15 +1,9 @@
-import java.util.*;
+class Solution {
+    public String convert(String s, int numRows) {
+        // no coding needed if numRows = 1
+        if (numRows==1)
+            return s;
 
-public class draft {
-
-    public static void main(String[] args) {
-        String s = "A";
-        int numRows = 1;
-        String ans = convert(s,numRows);
-        System.out.println(ans);
-    }
-
-    public static String convert(String s, int numRows) {
         String ans="";
         String ansArray[] = new String[numRows];
         int arrayPos = 0;   // initial position is 0
@@ -20,7 +14,7 @@ public class draft {
             ansArray[i]="";
         }
 
-
+        // loop to fill the array
         for (int pos=0; pos<s.length(); pos++){
             ansArray[arrayPos] += s.charAt(pos);
 
@@ -31,9 +25,10 @@ public class draft {
                 dir = -1;
             }
 
+            // position modifier
             arrayPos += dir;
         }
-
+        // combine the array to String
         for (String t:ansArray){
             ans+=t;
         }
