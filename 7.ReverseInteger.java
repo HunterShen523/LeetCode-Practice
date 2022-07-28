@@ -1,15 +1,5 @@
-import java.util.*;
-
-public class draft {
-
-    public static void main(String[] args) {
-        
-        int num = 123;
-        int ans = reverse(num);
-        System.out.println(ans);
-    }
-
-    public static int reverse(int x) {
+class Solution {
+    public int reverse(int x) {
         int ans = 0;
 
         while ( x!=0 ) {
