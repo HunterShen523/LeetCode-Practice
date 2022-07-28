@@ -1,13 +1,5 @@
-public class draft {
-
-    public static void main(String[] args) {
-        
-        String s = "+";
-        int sInt = myAtoi(s);
-        System.out.println(sInt);
-    }
-
-    public static int myAtoi(String s) {
+class Solution {
+    public int myAtoi(String s) {
         int ans = 0;
         int inttemp;
         String stemp = s;
