@@ -1,13 +1,5 @@
-public class draft {
-
-    public static void main(String[] args) {
-        String s = "a";
-        String p = "c*a";
-    
-        System.out.println(isMatch(s,p));
-    }
-
-    public static boolean isMatch(String s, String p) {
+class Solution {
+    public boolean isMatch(String s, String p) {
         char charTmp;
         
         // record number of '*', to avoid infinite searching
@@ -54,4 +46,5 @@ public class draft {
         // never reach, place holder
         return false;
     }
+
 }
