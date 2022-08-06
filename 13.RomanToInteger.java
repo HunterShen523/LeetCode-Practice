@@ -1,13 +1,6 @@
-public class draft {
+class Solution {
+    public int romanToInt(String s) {
 
-    public static void main(String[] args) {
-    
-        String a = "DCXXI";
-        System.out.println(q12(a));
-    }
-
-    public static int q12(String s) {
-        
         int ans=0;
 
         while (s.length()>=1 && s.substring(0,1).equals("M")) {
@@ -20,10 +13,6 @@ public class draft {
             ans += 900;
         }
 
-        System.out.println(s);
-        System.out.println(ans);
-        System.out.println();
-
         while (s.length()>=1 && s.substring(0,1).equals("D")) {
             s=s.substring(1);
             ans += 500;
@@ -34,19 +23,10 @@ public class draft {
             ans += 400;
         }
 
-        System.out.println(s);
-        System.out.println(ans);
-        System.out.println();
-
         while (s.length()>=1 && s.substring(0,1).equals("C")) {
             s=s.substring(1);
             ans += 100;
         }
-
-        
-        System.out.println(s);
-        System.out.println(ans);
-        System.out.println();
 
         while (s.length()>=2 && s.substring(0,2).equals("XC")) {
             s=s.substring(2);
@@ -57,25 +37,16 @@ public class draft {
             s=s.substring(1);
             ans += 50;
         }
-        
 
         while (s.length()>=2 && s.substring(0,2).equals("XL")) {
             s=s.substring(2);
             ans += 40;
         }
 
-        System.out.println(s);
-        System.out.println(ans);
-        System.out.println();
-
         while (s.length()>=1 && s.substring(0,1).equals("X")) {
             s=s.substring(1);
             ans += 10;
         }
-
-        System.out.println(s);
-        System.out.println(ans);
-        System.out.println();
 
         while (s.length()>=2 && s.substring(0,2).equals("IX")) {
             s=s.substring(2);
