@@ -1,16 +1,5 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-public class draft {
-
-    public static void main(String[] args) {
-    
-        int[] nums = new int[]{-1,0,1,2,-1,-4};
-        System.out.println(threeSum(nums));
-    }
-
-    public static List<List<Integer>> threeSum(int[] nums) {
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
         
         List<List<Integer>> res = new ArrayList<>();
         int a = 0;
@@ -32,21 +21,26 @@ public class draft {
                 tmp = nums[a]+nums[b]+nums[c];
                 if (tmp==0) {
                     res.add(Arrays.asList(nums[a], nums[b], nums[c]));
+                    // increment b, decrement c; skip one when duplicate
                     b++;
-                    while (nums[b]==nums[b-1]) b++;
+                    while (b<c && nums[b]==nums[b-1]) b++;
                     c--;
-                    while (nums[c]==nums[c+1]) c--;
+                    while (c>b && nums[c]==nums[c+1]) c--;
                 } else if (tmp>0) {
+                    // decrement c; skip one when duplicate
                     c--;
-                    while (nums[c]==nums[c+1]) c--;
+                    while (c>b && nums[c]==nums[c+1]) c--;
                 } else {
+                    // increment b; skip one when duplicate
                     b++;
-                    while (nums[b]==nums[b-1]) b++;
+                    while (b<c && nums[b]==nums[b-1]) b++;
                 }
             }
+            // increment a; skip one when duplicate
             a++;
-            while (nums[a]==nums[a-1]) a++;
+            while (a<=nums.length-3 && nums[a]==nums[a-1]) a++;
         }
+        
         return res;
     }
 }
